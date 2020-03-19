@@ -33,5 +33,7 @@ Obviously this needs `ESX`
 **Videos**
 
 [Normal Vending Machine Showoff](https://www.youtube.com/watch?v=dvQYazR44Vo)
+
 [Weed Vending Machine Showoff](https://img.xpl.wtf/s/hpBOrnr.mp4)
+
 Note: Weed effects aren't included in this mod
