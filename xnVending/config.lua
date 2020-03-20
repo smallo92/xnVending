@@ -1,5 +1,7 @@
 Config = {}
 
+Config.NewESX = false -- If you're using the latest version of ESX enable this
+
 Config.DispenseDict = {"mini@sprunk", "plyr_buy_drink_pt1"}
 Config.PocketAnims = {"mp_common_miss", "put_away_coke"}
 
