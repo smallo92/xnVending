@@ -20,12 +20,22 @@ ESX.RegisterServerCallback('esx_vending:checkMoneyandInvent', function(source, c
 	if thisCost > cashMoney then
 		cb("cash")
 	else
-		if targetItem.limit ~= -1 and (targetItem.count + 1) > targetItem.limit then
-			cb("inventory")
+		if Config.NewEsx then
+			if not xPlayer.canCarryItem(thisItem, 1) then
+				cb("inventory")
+			else
+				xPlayer.removeMoney(thisCost)
+				xPlayer.addInventoryItem(thisItem, 1)
+				cb(true)
+			end
 		else
-			xPlayer.removeMoney(thisCost)
-			xPlayer.addInventoryItem(thisItem, 1)
-			cb(true)
+			if targetItem.limit ~= -1 and (targetItem.count + 1) > targetItem.limit then
+				cb("inventory")
+			else
+				xPlayer.removeMoney(thisCost)
+				xPlayer.addInventoryItem(thisItem, 1)
+				cb(true)
+			end
 		end
 	end
 end)

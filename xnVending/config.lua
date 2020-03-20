@@ -3,6 +3,8 @@ Config = {}
 Config.DispenseDict = {"mini@sprunk", "plyr_buy_drink_pt1"}
 Config.PocketAnims = {"mp_common_miss", "put_away_coke"}
 
+Config.NewEsx = false -- Change this to true to use the new ESX System
+
 Config.Machines = {
 	{
 		model = `prop_vend_soda_01`, -- Model name
