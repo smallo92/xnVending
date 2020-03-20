@@ -8,6 +8,8 @@ Copy xnVending to your resources folder and add `start xnVending` to your server
 
 **Config**
 
+If you are running the latest ESX version and you're getting this error `@xnVending/server/server.lua:23: attempt to compare nil with number` then change `Config.NewESX` to `true` in the config
+
 In the config are the animations for the vending machine (audio is part of the animation, so I wouldn't recommend changing it) `Config.DispenseDict`
 
 There is also the animations for putting the item in the users pocket, there is probably a better one somewhere `Config.PocketAnims`
