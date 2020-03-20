@@ -15,9 +15,11 @@ local itemName = nil
 local itemProp = nil
 
 Citizen.CreateThread(function()
+    local waitTime = 500
 	while true do
-		Citizen.Wait(0)
-		if nearVendingMachine() and not usingMachine and not IsPedInAnyVehicle(PlayerPedId(), 1) then
+		Citizen.Wait(waitTime)
+        if nearVendingMachine() and not usingMachine and not IsPedInAnyVehicle(PlayerPedId(), 1) then
+            waitTime = 1
 			DisplayHelpText("Press ~INPUT_PICKUP~ to buy a ~y~" .. itemName .. "~s~ for ~g~$" .. itemCost)
 			if IsControlJustPressed(1, 38) then
 				ESX.TriggerServerCallback('esx_vending:checkMoneyandInvent', function(response)
@@ -66,7 +68,9 @@ Citizen.CreateThread(function()
 						usingMachine = false
 					end
 				end, itemItem)
-			end
+            end
+        else
+            waitTime = 500
 		end
 	end
 end)
@@ -82,7 +86,7 @@ function nearVendingMachine()
 			itemCost = machine.price
 			itemName = machine.name
 			itemProp = machine.prop
-			return true
+            return true
 		end
 	end
 	return false
