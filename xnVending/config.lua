@@ -4,7 +4,18 @@
 
 Config = {}
 
-Config.NewESX = false -- If you're using the latest version of ESX enable this
+-----------------------------------------------------------------------------------------
+--                    Select the framework used by your server                         --
+-----------------------------------------------------------------------------------------
+
+--[[ ESX Compatibility ]]
+Config.Framework = "ESX"
+--[[ New ESX Compatibility, for latest versions of ESX ]]
+-- Config.Framework = "NewESX"
+--[[ vRP (0.5) Compatibility (Dunko uses this) ]]
+-- Config.Framework = "vRP"
+--[[ No framework, no economy required (never denies the user an item) ]]
+-- Config.Framework = "Standalone"
 
 Config.DispenseDict = {"mini@sprunk", "plyr_buy_drink_pt1"}
 Config.PocketAnims = {"mp_common_miss", "put_away_coke"}
