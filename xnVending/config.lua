@@ -1,3 +1,7 @@
+-----------------------------------------------------------------------------------------
+-- Note you can only have a max of 9 items per vending machine anymore and it'll break --
+-----------------------------------------------------------------------------------------
+
 Config = {}
 
 Config.NewESX = false -- If you're using the latest version of ESX enable this
@@ -6,32 +10,41 @@ Config.DispenseDict = {"mini@sprunk", "plyr_buy_drink_pt1"}
 Config.PocketAnims = {"mp_common_miss", "put_away_coke"}
 
 Config.Machines = {
-	{
-		model = `prop_vend_soda_01`, -- Model name
-		item = "ecola", -- Database item name
-		name = "E-Cola", -- Friendly display name
-		prop = "prop_ecola_can", -- Prop to spawn falling in machine
-		price = 1 -- Purchase price
+	[`prop_vend_soda_01`] = {			-- machine model
+		item =  {"ecola"}, 				-- Database item names
+		name =  {"E-Cola"}, 			-- Friendly display names
+		prop =  {`prop_ecola_can`}, 	-- Props to spawn falling in machine
+		price = {1}						-- Purchase prices
 	},
-	{
-		model = `prop_vend_soda_02`, 
-		item = "sprunk",
-		name = "Sprunk",
-		prop = "prop_ld_can_01",
-		price = 1
+	[`prop_vend_soda_02`] = {
+		item = {"sprunk"},
+		name = {"Sprunk"},
+		prop = {`prop_ld_can_01`},
+		price = {1}
 	},
-	{
-		model = `prop_vend_snak_01`,
-		item = "p&qs",
-		name = "Ps & Qs",
-		prop = "prop_candy_pqs",
-		price = 3
+	[`prop_vend_snak_01`] = {
+		item = {"p&qs", "phatchips"},
+		name = {"Ps & Qs", "Phat Chips"},
+		prop = {`prop_candy_pqs`, `v_ret_ml_chips3`},
+		price = {3, 4}
 	},
-	{
-		model = `weed_vending`,
-		item = "marijuana",
-		name = "Weed",
-		prop = "prop_weed_bottle",
-		price = 100
+	[`weed_vending`] = {
+		item = {"marijuana"},
+		name = {"Weed"},
+		prop = {`prop_weed_bottle`},
+		price = {100}
 	}
+}
+
+Config.PurchaseButtons = {
+	-- [Keyboard Key] = Key Index
+	[1] = 157,
+	[2] = 158,
+	[3] = 160,
+	[4] = 164,
+	[5] = 165,
+	[6] = 159,
+	[7] = 161,
+	[8] = 162,
+	[9] = 163
 }
