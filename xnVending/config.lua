@@ -36,6 +36,10 @@ Config.Machines = {
 	}
 }
 
+-----------------------------------------------------------------------------------------
+-- 			 Don't change this below, it'll just break the whole script				   --
+-----------------------------------------------------------------------------------------
+
 Config.PurchaseButtons = {
 	-- [Keyboard Key] = Key Index
 	[1] = 157,
