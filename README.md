@@ -8,6 +8,8 @@ Copy xnVending to your resources folder and add `start xnVending` to your server
 
 **Config**
 
+Edit the top section to choose your framework, ESX, ESXNew (which is to support the changes to inventories), vRP or Standalone! Just simply uncomment the one you want to use and comment the others!
+
 If you are running the latest ESX version and you're getting this error `@xnVending/server/server.lua:23: attempt to compare nil with number` then change `Config.NewESX` to `true` in the config
 
 In the config are the animations for the vending machine (audio is part of the animation, so I wouldn't recommend changing it) `Config.DispenseDict`
@@ -17,14 +19,14 @@ There is also the animations for putting the item in the users pocket, there is 
 Last thing is the config for the vending machines and the items here is an example;
 
 ```lua
-{
-	model = `prop_vend_soda_01`, -- Model name
-	item = "ecola", -- Database item name
-	name = "E-Cola", -- Friendly display name
-	prop = "prop_ecola_can", -- Prop to spawn falling in machine
-	price = 1 -- Purchase price
+[`prop_vend_soda_01`] = {			-- Machine model
+	item =  {"ecola"}, 				-- Database item names
+	name =  {"E-Cola"}, 			-- Friendly display names
+	prop =  {`prop_ecola_can`}, 	-- Props to spawn falling in machine
+	price = {1}						-- Purchase prices
 },
 ```
+You can add multiple items to each by separating them with commas, as they are tables. Up to 9 items per machine.
 
 It's pretty self explanatory. No coordinates need to be added for vending machines as it uses a searching native to find the closest model of type. So this will work for any new types you have on your server without any configuration.
 
